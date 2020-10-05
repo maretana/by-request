@@ -1,9 +1,13 @@
 import React from 'react'
+import AlbumsList from '../components/AlbumsList'
 import songs from '../lib/songs'
 
-export default function VotePage (props) {
-  console.log('props', props)
-  return <div />
+export default function VotePage ({ albums }) {
+  return (
+    <div>
+      <AlbumsList albums={albums} />
+    </div>
+  )
 }
 
 export async function getStaticProps (context) {
