@@ -2,6 +2,11 @@
 @import 'reset';
 
 html {
-  background-color: black;
+  background-color: lighten(black, 8);
   font-family: $font-family-montserrat;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-mulish;
 }

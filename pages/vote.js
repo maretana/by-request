@@ -4,9 +4,9 @@ import songs from '../lib/songs'
 
 export default function VotePage ({ albums }) {
   return (
-    <div>
+    <main>
       <AlbumsList albums={albums} />
-    </div>
+    </main>
   )
 }
 

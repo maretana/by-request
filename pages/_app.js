@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Layout from '../components/Layout/Layout'
 
 import '../styles/global.scss'
 
@@ -14,7 +15,9 @@ function MyApp ({ Component, pageProps }) {
           <link rel='stylesheet' href={GOOGLE_FONTS} />
         </noscript>
       </Head>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

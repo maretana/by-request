@@ -1,0 +1,28 @@
+.AlbumCardListItem {
+  margin-bottom: 24px;
+  box-shadow: 0 0 5px 1px rgba(28,59,186,1);
+}
+
+.AlbumCard {
+  color: white;
+  display: flex;
+  flex-direction: row;
+
+  img {
+    width: 38vw;
+    margin-right: 15px;
+  }
+}
+
+.TextContainer {
+  padding: 15px 0;
+}
+
+.AlbumTitle {
+  font-size: 22px;
+}
+
+.AlbumYear {
+  font-size: 18px;
+  margin-top: 0.5em;
+}
