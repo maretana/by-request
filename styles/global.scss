@@ -1,6 +1,7 @@
 @import "base";
 @import 'reset';
 
-body {
-  background-color: white;
+html {
+  background-color: black;
+  font-family: $font-family-montserrat;
 }
