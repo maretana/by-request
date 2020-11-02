@@ -1,0 +1,15 @@
+// Adds the color modifier for each album by setting $property.
+// class name corresponds to album 'slug' column in DB. 
+@mixin albumThemeColor($property) {
+  &.kill {
+    #{$property}: #e00a14;
+  }
+
+  &.ride {
+    #{$property}: #0d64b3;
+  }
+  
+  &.master {
+    #{$property}: #86623e;
+  }
+}
