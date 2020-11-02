@@ -3,10 +3,10 @@ import Song from '../Song'
 
 import styles from './SongsList.module.scss'
 
-export default function SongsList ({ songs }) {
+export default function SongsList ({ songs, setEmbedCode }) {
   return (
-    <ul>
-      {songs.map(song => <Song key={song.idSong} {...song} />)}
-    </ul>
+    <ol>
+      {songs.map(song => <Song key={song.idSong} {...song} setEmbedCode={setEmbedCode} />)}
+    </ol>
   )
 }

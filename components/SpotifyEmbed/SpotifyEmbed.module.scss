@@ -1,0 +1,22 @@
+.SpotifyEmbed {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid white;
+  background-color: black;
+  transition: opacity 0.7s ease-in;
+}
+
+.CloseButton {
+  $buttonSize: 30px;
+  position: absolute;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0;
+  left: 301px;
+  top: -1px;
+  width: $buttonSize;
+  height: $buttonSize;
+}

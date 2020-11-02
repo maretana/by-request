@@ -1,6 +1,10 @@
 @import "base";
 @import 'reset';
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-color: lighten(black, 8);
   font-family: $font-family-montserrat;

@@ -1,13 +1,15 @@
 import React from 'react'
-import SpotifyEmbed from '../SpotifyEmbed/SpotifyEmbed'
 
 import styles from './Song.module.scss'
 
-export default function Song ({ idSong, albumPosition, name, embedCode }) {
+export default function Song ({ idSong, albumPosition, name, embedCode, setEmbedCode }) {
+  function onSongPlay () {
+    setEmbedCode(embedCode)
+  }
   return (
-    <div>
+    <li>
       <p>{`${albumPosition}. ${name}`}</p>
-      <SpotifyEmbed embedCode={embedCode} />
-    </div>
+      <button type='button' onClick={onSongPlay}>Play!</button>
+    </li>
   )
 }
