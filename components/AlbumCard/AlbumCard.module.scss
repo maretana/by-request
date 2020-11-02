@@ -1,6 +1,18 @@
 .AlbumCardListItem {
   margin-bottom: 24px;
-  box-shadow: 0 0 5px 1px rgba(28,59,186,1);
+  box-shadow: 0 0 5px 1px;
+
+  &.kill {
+    color: #e00a14;
+  }
+
+  &.ride {
+    color: #0d64b3;
+  }
+  
+  &.master {
+    color: #86623e;
+  }
 }
 
 .AlbumCard {
