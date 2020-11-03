@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import styles from './SpotifyEmbed.module.scss'
 
@@ -9,9 +9,9 @@ export default function SpotifyEmbed ({ embedCode, setEmbedCode }) {
     setEmbedCode('')
   }
 
-  useEffect(() => {
+  function oniFrameLoad () {
     setOpacity(0.9)
-  }, [])
+  }
 
   return (
     <div className={styles.SpotifyEmbed} style={{ opacity }}>
@@ -22,6 +22,7 @@ export default function SpotifyEmbed ({ embedCode, setEmbedCode }) {
         frameBorder='0'
         allowtransparency='true'
         allow='encrypted-media'
+        onLoad={oniFrameLoad}
       />
       <button type='button' className={styles.CloseButton} onClick={onClose}>X</button>
     </div>
