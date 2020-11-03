@@ -5,25 +5,25 @@ import songs from '../lib/songs'
 
 export default function VotePage ({ albums }) {
   const [embedCode, setEmbedCode] = useState('')
-  const [displayEmbedCode, setDisplayEmbedCode] = useState(false)
+  const [shouldDisplayEmbed, setShouldDisplayEmbed] = useState(false)
 
   function refreshEmbedCode (nextEmebedCode) {
     if (nextEmebedCode !== embedCode) {
       setEmbedCode(nextEmebedCode)
-      setDisplayEmbedCode(false)
+      setShouldDisplayEmbed(false)
     }
   }
 
   useEffect(() => {
     if (embedCode !== '') {
-      setDisplayEmbedCode(true)
+      setShouldDisplayEmbed(true)
     }
   }, [embedCode])
 
   return (
     <main>
       <AlbumsList albums={albums} setEmbedCode={refreshEmbedCode} />
-      {displayEmbedCode && (
+      {shouldDisplayEmbed && (
         <SpotifyEmbed embedCode={embedCode} setEmbedCode={refreshEmbedCode} />
       )}
     </main>
