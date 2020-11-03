@@ -6,7 +6,7 @@
 }
 
 html {
-  background-color: lighten(black, 8);
+  background-color: $backgroundColor;
   font-family: $font-family-montserrat;
   font-size: 14px;
 }

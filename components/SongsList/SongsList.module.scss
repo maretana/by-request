@@ -1,0 +1,9 @@
+@import '../../styles/base';
+
+.SongsListContainer {
+  @include albumThemeColor(background-color);
+}
+
+.SongsList {
+  background: linear-gradient(rgba($backgroundColor, 0.85), rgba($backgroundColor, 0.6));
+}

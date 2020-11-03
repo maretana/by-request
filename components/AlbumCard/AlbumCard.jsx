@@ -19,7 +19,7 @@ export default function AlbumCard ({ name, artwork, year, slug, songs, setEmbedC
           <p className={styles.AlbumYear}>{year}</p>
         </div>
       </section>
-      {isOpen && (<SongsList songs={songs} setEmbedCode={setEmbedCode} />)}
+      {isOpen && (<SongsList songs={songs} slug={slug} setEmbedCode={setEmbedCode} />)}
     </li>
   )
 }
