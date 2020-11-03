@@ -8,7 +8,7 @@ export default function Song ({ idSong, albumPosition, name, embedCode, setEmbed
   }
   return (
     <li className={styles.Song}>
-      <p>{`${albumPosition}. ${name}`}</p>
+      <p className={styles.SongName}>{`${albumPosition}. ${name}`}</p>
       <button type='button' onClick={onSongPlay}>Play!</button>
     </li>
   )

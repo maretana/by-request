@@ -1,3 +1,17 @@
 .Song {
+  display: flex;
   color: white;
+  align-items: center;
+  height: 30px;
+  justify-content: flex-end;
+
+  button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+  }
+}
+
+.SongName {
+  margin-right: auto;
 }
