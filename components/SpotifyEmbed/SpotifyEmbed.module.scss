@@ -1,11 +1,12 @@
 $borderColor: gray;
+$borderWidth: 1px;
 
 .SpotifyEmbed {
   position: fixed;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  border: 1px solid $borderColor;
+  border: $borderWidth solid $borderColor;
   background-color: black;
   transition: opacity 0.3s linear;
 }
@@ -15,10 +16,10 @@ $borderColor: gray;
   position: absolute;
   background-color: black;
   color: white;
-  border: 1px solid $borderColor;
+  border: $borderWidth solid $borderColor;
   padding: 0;
-  left: 301px;
-  top: -1px;
+  left: 300px + $borderWidth;
+  top: 0 - $borderWidth;
   width: $buttonSize;
   height: $buttonSize;
 }
