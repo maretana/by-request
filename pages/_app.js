@@ -8,7 +8,7 @@ function MyApp ({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='' />
         <link rel='preload' as='style' href={GOOGLE_FONTS} />
         <link rel='stylesheet' href={GOOGLE_FONTS} media='print' onLoad="this.media='all'" />
         <noscript
