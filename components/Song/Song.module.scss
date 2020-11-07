@@ -13,6 +13,27 @@
     border: 1px solid white;
     color: white;
     font-size: 1rem;
+    $size: 24px;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    padding: 0;
+    text-align: center;
+  }
+
+  .VoteButton {
+    font-size: 1rem;
+    margin-left: 5%;
+  
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  .PlayButton {
+    font-size: 0.7rem;
+    border-radius: 50%;
+    padding-left: 2px;
   }
 }
 
@@ -21,21 +42,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: percentage(2 / 3);
+  max-width: 75%;
   line-height: 1.2;
-}
-
-.VoteButton {
-  $size: 24px;
-  width: $size;
-  height: $size;
-  padding: 0;
-  text-align: center;
-  line-height: $size;
-  font-size: 1rem;
-  margin-left: 5%;
-
-  &:focus {
-    outline: none;
-  }
 }
