@@ -3,7 +3,7 @@ import SongsList from '../SongsList/SongsList'
 
 import styles from './AlbumCard.module.scss'
 
-export default function AlbumCard ({ name, artwork, year, slug, songs, setEmbedCode }) {
+export default function AlbumCard ({ name, artwork, year, slug, songs, votes, addVote, removeVote, setEmbedCode }) {
   return (
     <li className={[styles.AlbumCardListItem, styles[slug]].join(' ')}>
       <section className={styles.AlbumCard}>
@@ -13,7 +13,14 @@ export default function AlbumCard ({ name, artwork, year, slug, songs, setEmbedC
           <p className={styles.AlbumYear}>{year}</p>
         </div>
       </section>
-      <SongsList songs={songs} slug={slug} setEmbedCode={setEmbedCode} />
+      <SongsList
+        songs={songs}
+        slug={slug}
+        votes={votes}
+        addVote={addVote}
+        removeVote={removeVote}
+        setEmbedCode={setEmbedCode}
+      />
     </li>
   )
 }

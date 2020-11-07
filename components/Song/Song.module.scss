@@ -4,6 +4,9 @@
   align-items: center;
   height: 30px;
   justify-content: flex-end;
+  // background-color: rgba(rgb(29, 65, 29), 0.7);
+  // border-radius: 10px;
+  // margin-bottom: 5px;
 
   button {
     background: transparent;
@@ -14,4 +17,18 @@
 
 .SongName {
   margin-right: auto;
+}
+
+.VoteButton {
+  $size: 20px;
+  width: $size;
+  height: $size;
+  margin-left: 5%;
+  padding: 0;
+  text-align: center;
+  line-height: $size;
+
+  &:focus {
+    outline: none;
+  }
 }
