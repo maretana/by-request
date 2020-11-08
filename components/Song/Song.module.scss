@@ -4,9 +4,12 @@
   align-items: center;
   height: 30px;
   justify-content: flex-end;
-  // background-color: rgba(rgb(29, 65, 29), 0.7);
-  // border-radius: 10px;
   margin-bottom: .3rem;
+
+  &.selected {
+    background-color: rgba(48, 82, 48, 0.8);
+    border-radius: 2px;
+  }
 
   button {
     background: transparent;

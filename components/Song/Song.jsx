@@ -17,8 +17,13 @@ export default function Song ({ idSong, albumPosition, name, embedCode, isSelect
     }
   }
 
+  let songClass = styles.Song
+  if (isSelected) {
+    songClass = `${songClass} ${styles.selected}`
+  }
+
   return (
-    <li className={styles.Song}>
+    <li className={songClass}>
       <p className={styles.SongName}>{`${albumPosition}. ${name}`}</p>
       <button type='button' className={styles.PlayButton} onClick={onSongPlay}>
         <FontAwesomeIcon icon={faPlay} />
