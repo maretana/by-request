@@ -24,10 +24,10 @@
 }
 
 .AlbumTitle {
-  font-size: 22px;
+  font-size: (22px / $minFontSize) * 1rem;
 }
 
 .AlbumYear {
-  font-size: 18px;
+  font-size: (18px / $minFontSize) * 1rem;
   margin-top: 0.5em;
 }
