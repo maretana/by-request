@@ -8,6 +8,13 @@ function MyApp ({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
+        {/* favicon */}
+        <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+        <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+        <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+        <link rel='manifest' href='/site.webmanifest' />
+
+        {/* Google fonts */}
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='' />
         <link rel='preload' as='style' href={GOOGLE_FONTS} />
         <link rel='stylesheet' href={GOOGLE_FONTS} media='print' onLoad="this.media='all'" />
