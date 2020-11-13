@@ -3,7 +3,7 @@ import AlbumsList from '../components/AlbumsList'
 import SpotifyEmbed from '../components/SpotifyEmbed/SpotifyEmbed'
 import songs from '../lib/songs'
 
-const MAX_VOTES = 5
+const MAX_VOTES = 17
 
 export default function VotePage ({ albums, setHeaderText }) {
   const [embedCode, setEmbedCode] = useState('')
