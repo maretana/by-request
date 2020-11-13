@@ -1,0 +1,50 @@
+@import '../../styles/base';
+$height: (55px / $minFontSize) * 1rem;
+
+.Wrapper {
+  width: 100%;
+  height: $height;
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $height;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+  color: white;
+  padding: 5px 20px ;
+  box-shadow: 0 0 5px 5px rgba(rgb(10, 10, 10), 0.8);
+}
+
+.Logo,
+.LogoAnchor,
+.MenuButton {
+  height: 100%;
+}
+
+.LogoAnchor,
+.MenuButton {
+  width: 15%;
+}
+
+.LogoAnchor {
+  text-align: start;
+}
+
+.MenuButton {
+  color: white;
+  font-size: 2rem;
+  text-align: end;
+}
+
+
+.Title {
+  font-family: $font-family-mulish;
+  font-size: (22px / $minFontSize) * 1rem;
+}

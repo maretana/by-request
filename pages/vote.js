@@ -5,11 +5,10 @@ import songs from '../lib/songs'
 
 const MAX_VOTES = 5
 
-export default function VotePage ({ albums }) {
+export default function VotePage ({ albums, setHeaderText }) {
   const [embedCode, setEmbedCode] = useState('')
   const [shouldDisplayEmbed, setShouldDisplayEmbed] = useState(false)
   const [votes, setVotes] = useState([])
-  const [voteCount, setVoteCount] = useState(0)
 
   function refreshEmbedCode (nextEmebedCode) {
     if (nextEmebedCode !== embedCode) {
@@ -19,16 +18,14 @@ export default function VotePage ({ albums }) {
   }
 
   function addVote (songId) {
-    if (voteCount < MAX_VOTES) {
+    if (votes.length < MAX_VOTES) {
       setVotes([...votes, songId])
-      setVoteCount(voteCount + 1)
     }
   }
 
   function removeVote (songId) {
-    if (voteCount > 0) {
+    if (votes.length > 0) {
       setVotes(votes.filter(val => val !== songId))
-      setVoteCount(voteCount - 1)
     }
   }
 
@@ -37,6 +34,11 @@ export default function VotePage ({ albums }) {
       setShouldDisplayEmbed(true)
     }
   }, [embedCode])
+
+  useEffect(() => {
+    const votesRemaining = MAX_VOTES - votes.length
+    setHeaderText(`${votesRemaining} votes remaining`)
+  }, [votes])
 
   return (
     <main>

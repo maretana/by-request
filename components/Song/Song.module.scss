@@ -12,7 +12,6 @@
   }
 
   button {
-    background: transparent;
     border: 1px solid white;
     color: white;
     font-size: 1rem;
@@ -20,17 +19,12 @@
     width: $size;
     height: $size;
     line-height: $size;
-    padding: 0;
     text-align: center;
   }
 
   .VoteButton {
     font-size: 1rem;
     margin-left: 5%;
-  
-    &:focus {
-      outline: none;
-    }
   }
   
   .PlayButton {
