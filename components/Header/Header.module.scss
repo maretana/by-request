@@ -1,9 +1,8 @@
 @import '../../styles/base';
-$height: (55px / $minFontSize) * 1rem;
 
 .Wrapper {
   width: 100%;
-  height: $height;
+  height: $headerHeight;
 }
 
 .Header {
@@ -11,7 +10,7 @@ $height: (55px / $minFontSize) * 1rem;
   top: 0;
   left: 0;
   right: 0;
-  height: $height;
+  height: $headerHeight;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,9 +1,11 @@
+@import '../../styles/base';
+
 $borderColor: gray;
 $borderWidth: 1px;
 
 .SpotifyEmbed {
   position: fixed;
-  top: 0;
+  top: $headerHeight;
   left: 50%;
   transform: translateX(-50%);
   border: $borderWidth solid $borderColor;
