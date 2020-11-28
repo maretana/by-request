@@ -21,7 +21,7 @@ class MyDocument extends Document {
           {/* Google fonts */}
           <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='' />
           <link rel='preload' as='style' href={GOOGLE_FONTS} />
-          <link rel='stylesheet' href={GOOGLE_FONTS} media='print' onLoad="this.media='all'" />
+          <link rel='stylesheet' href={GOOGLE_FONTS} />
           <noscript
             dangerouslySetInnerHTML={{
               __html: `<link rel="stylesheet" href="${GOOGLE_FONTS}">`
