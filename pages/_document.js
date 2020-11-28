@@ -22,11 +22,6 @@ class MyDocument extends Document {
           <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='' />
           <link rel='preload' as='style' href={GOOGLE_FONTS} />
           <link rel='stylesheet' href={GOOGLE_FONTS} />
-          <noscript
-            dangerouslySetInnerHTML={{
-              __html: `<link rel="stylesheet" href="${GOOGLE_FONTS}">`
-            }}
-          />
         </Head>
         <body>
           <Main />
