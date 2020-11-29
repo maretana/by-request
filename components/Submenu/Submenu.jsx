@@ -12,7 +12,9 @@ export default function Submenu ({ isOpen, closeSubmenu }) {
       <button type='button' className={styles.CloseButton} onClick={closeSubmenu}>
         <FontAwesomeIcon icon={faTimes} />
       </button>
-      <h1>Costa Rica by Request</h1>
+      <h1 className={styles.Title} aria-label='Costa Rica by request'>
+        <span className={styles.CountryName}>Costa ric&#188;</span> by request
+      </h1>
       <NavigationList closeSubmenu={closeSubmenu} />
       <section>
         <h1>Follow us</h1>

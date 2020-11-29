@@ -1,3 +1,16 @@
 $font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 $font-family-montserrat: 'Montserrat', $font-family-system;
 $font-family-mulish: 'Mulish', $font-family-system;
+$font-family-pastor-name: 'Pastor of Muppets';
+$font-family-pastor: $font-family-pastor-name, $font-family-system;
+$fonts-path: '/fonts';
+
+@font-face {
+  font-family: $font-family-pastor-name;
+  $url: '#{$fonts-path}/pastor_of_muppets-webfont';
+  src: url('#{$url}.woff2') format('woff2'),
+       url('#{$url}.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
