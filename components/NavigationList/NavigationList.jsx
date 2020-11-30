@@ -6,7 +6,7 @@ import styles from './NavigationList.module.scss'
 export default function NavigationList ({ closeSubmenu }) {
   return (
     <nav>
-      <ul>
+      <ul className={styles.NavigationList}>
         <NavigationLink href='/' closeSubmenu={closeSubmenu}>
           Home
         </NavigationLink>

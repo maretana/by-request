@@ -5,9 +5,9 @@ import styles from './NavigationLink.module.scss'
 
 export default function NavigationLink ({ children, href, closeSubmenu }) {
   return (
-    <li>
+    <li className={styles.NavigationListItem}>
       <Link href={href}>
-        <a onClick={closeSubmenu}>{children}</a>
+        <a className={styles.NavigationLink} onClick={closeSubmenu}>{children}</a>
       </Link>
     </li>
   )
