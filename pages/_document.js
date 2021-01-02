@@ -1,3 +1,4 @@
+import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 const GOOGLE_FONTS = 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Mulish:ital,wght@0,400;0,700;1,400;1,700&display=swap'

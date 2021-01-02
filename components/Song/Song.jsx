@@ -4,12 +4,12 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './Song.module.scss'
 
-export default function Song ({ idSong, albumPosition, name, embedCode, isSelected, addVote, removeVote, setEmbedCode }) {
-  function onSongPlay () {
-    setEmbedCode(embedCode)
+export default function Song({ idSong, albumPosition, name, embedCode, isSelected, addVote, removeVote, setEmbedCode }) {
+  function onSongPlay() {
+    setEmbedCode(embedCode);
   }
 
-  function onToggleVote () {
+  function onToggleVote() {
     if (isSelected) {
       removeVote(idSong)
     } else {

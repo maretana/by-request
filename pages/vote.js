@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import AlbumsList from '../components/AlbumsList'
 import SpotifyEmbed from '../components/SpotifyEmbed/SpotifyEmbed'
 import songs from '../lib/songs'
@@ -54,6 +55,11 @@ export default function VotePage ({ albums, setHeaderText }) {
       )}
     </main>
   )
+}
+
+VotePage.propTypes = {
+  albums: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setHeaderText: PropTypes.func.isRequired
 }
 
 export async function getStaticProps (context) {

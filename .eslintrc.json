@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "standard-react",
+    "plugin:react-hooks/recommended"
+  ]
+}
