@@ -15,7 +15,7 @@ export default function NavigationLink ({ children, href, closeSubmenu }) {
 }
 
 NavigationLink.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.any,
   href: PropTypes.string,
   closeSubmenu: PropTypes.func.isRequired
 }

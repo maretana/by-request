@@ -29,7 +29,7 @@ export default function AlbumCard ({ name, artwork, year, slug, songs, votes, ad
 AlbumCard.propTypes = {
   name: PropTypes.string.isRequired,
   artwork: PropTypes.string.isRequired,
-  year: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
   slug: PropTypes.string.isRequired,
   songs: PropTypes.array.isRequired,
   votes: PropTypes.array.isRequired,
