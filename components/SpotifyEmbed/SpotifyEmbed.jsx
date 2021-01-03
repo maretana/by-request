@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import styles from './SpotifyEmbed.module.scss'
 
@@ -27,4 +28,9 @@ export default function SpotifyEmbed ({ embedCode, setEmbedCode }) {
       <button type='button' className={styles.CloseButton} onClick={onClose}>X</button>
     </div>
   )
+}
+
+SpotifyEmbed.propTypes = {
+  embedCode: PropTypes.string.isRequired,
+  setEmbedCode: PropTypes.func.isRequired
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 import Submenu from '../Submenu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,4 +30,8 @@ export default function Header ({ text }) {
       </div>
     </header>
   )
+}
+
+Header.propTypes = {
+  text: PropTypes.string
 }

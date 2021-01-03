@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import SongsList from '../SongsList/SongsList'
 
 import styles from './AlbumCard.module.scss'
@@ -23,4 +24,16 @@ export default function AlbumCard ({ name, artwork, year, slug, songs, votes, ad
       />
     </li>
   )
+}
+
+AlbumCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  artwork: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  songs: PropTypes.array.isRequired,
+  votes: PropTypes.array.isRequired,
+  addVote: PropTypes.func.isRequired,
+  removeVote: PropTypes.func.isRequired,
+  setEmbedCode: PropTypes.func.isRequired
 }

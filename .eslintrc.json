@@ -1,6 +1,13 @@
 {
+  "parser": "@babel/eslint-parser",
   "extends": [
+    "standard",
+    "standard-jsx",
     "standard-react",
     "plugin:react-hooks/recommended"
-  ]
+  ],
+  "rules": {
+    "template-curly-spacing": "off",
+    "indent": ["error", 2, { "ignoredNodes": ["TemplateLiteral"] }]
+  }
 }

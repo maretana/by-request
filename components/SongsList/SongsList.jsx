@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Song from '../Song'
 
 import styles from './SongsList.module.scss'
@@ -33,4 +34,13 @@ export default function SongsList ({ songs, slug, votes, addVote, removeVote, se
       </ol>
     </div>
   )
+}
+
+SongsList.propTypes = {
+  songs: PropTypes.array.isRequired,
+  slug: PropTypes.string.isRequired,
+  votes: PropTypes.array.isRequired,
+  addVote: PropTypes.func.isRequired,
+  removeVote: PropTypes.func.isRequired,
+  setEmbedCode: PropTypes.func.isRequired
 }

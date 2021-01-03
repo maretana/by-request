@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'next/link'
 
 import styles from './NavigationLink.module.scss'
@@ -11,4 +12,10 @@ export default function NavigationLink ({ children, href, closeSubmenu }) {
       </Link>
     </li>
   )
+}
+
+NavigationLink.propTypes = {
+  children: PropTypes.object,
+  href: PropTypes.string,
+  closeSubmenu: PropTypes.func.isRequired
 }
