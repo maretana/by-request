@@ -8,6 +8,8 @@
   ],
   "rules": {
     "template-curly-spacing": "off",
-    "indent": ["error", 2, { "ignoredNodes": ["TemplateLiteral"] }]
+    "indent": ["error", 2, { "ignoredNodes": ["TemplateLiteral"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
