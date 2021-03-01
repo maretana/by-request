@@ -4,7 +4,7 @@ import SongsList from '../SongsList/SongsList'
 
 import styles from './AlbumCard.module.scss'
 
-export default function AlbumCard ({ name, artwork, year, slug, songs, votes, addVote, removeVote, setEmbedCode }) {
+function AlbumCard ({ name, artwork, year, slug, songs, votes, voteDispatch, setEmbedCode }) {
   return (
     <li className={[styles.AlbumCardListItem, styles[slug]].join(' ')}>
       <section className={styles.AlbumCard}>
@@ -18,8 +18,7 @@ export default function AlbumCard ({ name, artwork, year, slug, songs, votes, ad
         songs={songs}
         slug={slug}
         votes={votes}
-        addVote={addVote}
-        removeVote={removeVote}
+        voteDispatch={voteDispatch}
         setEmbedCode={setEmbedCode}
       />
     </li>
@@ -32,8 +31,9 @@ AlbumCard.propTypes = {
   year: PropTypes.number.isRequired,
   slug: PropTypes.string.isRequired,
   songs: PropTypes.array.isRequired,
-  votes: PropTypes.array.isRequired,
-  addVote: PropTypes.func.isRequired,
-  removeVote: PropTypes.func.isRequired,
-  setEmbedCode: PropTypes.func.isRequired
+  votes: PropTypes.array,
+  voteDispatch: PropTypes.func.isRequired,
+  setEmbedCode: PropTypes.func
 }
+
+export default React.memo(AlbumCard)
