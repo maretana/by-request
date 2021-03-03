@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
@@ -7,7 +7,21 @@ import NavigationList from '../NavigationList'
 
 import styles from './Submenu.module.scss'
 
-export default function Submenu ({ isOpen, closeSubmenu }) {
+function Submenu ({ isOpen, closeSubmenu }) {
+  const socialLinks = useMemo(() => (
+    <nav className={styles.SocialLinks}>
+      <a href='https://www.facebook.com/CostaRicaFadeToBlack/' aria-label='Go to our Facebook page'>
+        <FontAwesomeIcon icon={faFacebook} />
+      </a>
+      <a href='https://www.instagram.com/costaricafadetoblack/' aria-label='Go to our Instagram page'>
+        <FontAwesomeIcon icon={faInstagram} />
+      </a>
+      <a href='https://twitter.com/CR_FadeToBlack' aria-label='Go to our Twitter page'>
+        <FontAwesomeIcon icon={faTwitter} />
+      </a>
+    </nav>
+  ), [])
+
   return (
     <div className={`${styles.Submenu} ${isOpen ? styles.open : styles.close}`}>
       <button type='button' className={styles.CloseButton} onClick={closeSubmenu}>
@@ -25,17 +39,7 @@ export default function Submenu ({ isOpen, closeSubmenu }) {
             src='/chapter_logo_text.png'
             alt='Costa Rica Fade To Black logo'
           />
-          <nav className={styles.SocialLinks}>
-            <a href='https://www.facebook.com/CostaRicaFadeToBlack/' aria-label='Go to our Facebook page'>
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href='https://www.instagram.com/costaricafadetoblack/' aria-label='Go to our Instagram page'>
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href='https://twitter.com/CR_FadeToBlack' aria-label='Go to our Twitter page'>
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-          </nav>
+          {socialLinks}
         </div>
       </section>
 
@@ -47,3 +51,5 @@ Submenu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   closeSubmenu: PropTypes.func.isRequired
 }
+
+export default React.memo(Submenu)

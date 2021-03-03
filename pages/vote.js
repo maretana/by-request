@@ -23,10 +23,11 @@ export default function VotePage ({ albums, setHeaderText }) {
     }
   }, [embedCode])
 
-  // useEffect(() => {
-  //   const votesRemaining = MAX_VOTES - votes.length
-  //   setHeaderText(`${votesRemaining} votes remaining`)
-  // }, [votes, setHeaderText])
+  useEffect(() => {
+    const MAX_VOTES = process.env.NEXT_PUBLIC_MAX_VOTES
+    const votesRemaining = MAX_VOTES - voteState.votesCount
+    setHeaderText(`${votesRemaining} votes remaining`)
+  }, [voteState, setHeaderText])
 
   return (
     <main>

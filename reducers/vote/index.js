@@ -1,17 +1,14 @@
-export const VOTE_ACTIONS = {
-  ADD_VOTE: 'ADD_VOTE',
-  REMOVE_VOTE: 'REMOVE_VOTE'
-}
+import { ADD_VOTE, REMOVE_VOTE } from '../../constants/voteActions'
 
 export const initialState = {
   albumVotes: {},
   votesCount: 0
 }
 
-const MAX_VOTES = 17
+const MAX_VOTES = process.env.NEXT_PUBLIC_MAX_VOTES
 
 const reducer = {}
-reducer[VOTE_ACTIONS.ADD_VOTE] = (state, { idSong, albumSlug }) => {
+reducer[ADD_VOTE] = (state, { idSong, albumSlug }) => {
   const { albumVotes, votesCount } = state
   const votesArray = albumVotes[albumSlug] || []
   if (votesCount < MAX_VOTES) {
@@ -27,7 +24,7 @@ reducer[VOTE_ACTIONS.ADD_VOTE] = (state, { idSong, albumSlug }) => {
   return state
 }
 
-reducer[VOTE_ACTIONS.REMOVE_VOTE] = (state, { idSong, albumSlug }) => {
+reducer[REMOVE_VOTE] = (state, { idSong, albumSlug }) => {
   const { albumVotes, votesCount } = state
   const votesArray = albumVotes[albumSlug] || []
   if (votesCount > 0) {

@@ -4,7 +4,7 @@ import NavigationLink from '../NavigationLink'
 
 import styles from './NavigationList.module.scss'
 
-export default function NavigationList ({ closeSubmenu }) {
+function NavigationList ({ closeSubmenu }) {
   return (
     <nav>
       <ul className={styles.NavigationList}>
@@ -22,3 +22,5 @@ export default function NavigationList ({ closeSubmenu }) {
 NavigationList.propTypes = {
   closeSubmenu: PropTypes.func.isRequired
 }
+
+export default React.memo(NavigationList)
