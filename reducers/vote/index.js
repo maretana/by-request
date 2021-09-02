@@ -1,8 +1,9 @@
-import { ADD_VOTE, REMOVE_VOTE } from '../../constants/voteActions'
+import { ADD_VOTE, REMOVE_VOTE, SET_EMBED_CODE } from '../../constants/voteActions'
 
 export const initialState = {
   albumVotes: {},
-  votesCount: 0
+  votesCount: 0,
+  embedCode: ''
 }
 
 const MAX_VOTES = process.env.NEXT_PUBLIC_MAX_VOTES
@@ -38,6 +39,15 @@ reducer[REMOVE_VOTE] = (state, { idSong, albumSlug }) => {
     }
   }
   return state
+}
+
+reducer[SET_EMBED_CODE] = (state, { embedCode }) => {
+  return state.embedCode !== embedCode
+    ? {
+      ...state,
+      embedCode
+    }
+    : state
 }
 
 export default function voteReducer (state, action) {

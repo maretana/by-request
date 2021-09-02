@@ -1,44 +1,34 @@
-import React, { useState, useReducer, useEffect } from 'react'
+import React, { useReducer, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import AlbumsList from '../components/AlbumsList'
 import SpotifyEmbed from '../components/SpotifyEmbed/SpotifyEmbed'
 import songs from '../lib/songs'
 import voteReducer, { initialState } from '../reducers/vote'
+import { SET_EMBED_CODE } from '../constants/voteActions'
 
 export default function VotePage ({ albums, setHeaderText }) {
-  const [embedCode, setEmbedCode] = useState('')
-  const [shouldDisplayEmbed, setShouldDisplayEmbed] = useState(false)
   const [voteState, voteDispatch] = useReducer(voteReducer, initialState)
-
-  function refreshEmbedCode (nextEmebedCode) {
-    if (nextEmebedCode !== embedCode) {
-      setEmbedCode(nextEmebedCode)
-      setShouldDisplayEmbed(false)
-    }
-  }
-
-  useEffect(() => {
-    if (embedCode !== '') {
-      setShouldDisplayEmbed(true)
-    }
-  }, [embedCode])
+  const shouldDisplayEmbed = voteState.embedCode !== ''
+  const setEmbedCode = useCallback((embedCode) => {
+    voteDispatch({ type: SET_EMBED_CODE, payload: { embedCode } })
+  }, [])
 
   useEffect(() => {
     const MAX_VOTES = process.env.NEXT_PUBLIC_MAX_VOTES
     const votesRemaining = MAX_VOTES - voteState.votesCount
     setHeaderText(`${votesRemaining} votes remaining`)
-  }, [voteState, setHeaderText])
+  }, [voteState.votesCount, setHeaderText])
 
   return (
     <main>
       <AlbumsList
         albums={albums}
         albumVotes={voteState.albumVotes}
-        setEmbedCode={null}
+        setEmbedCode={setEmbedCode}
         voteDispatch={voteDispatch}
       />
       {shouldDisplayEmbed && (
-        <SpotifyEmbed embedCode={embedCode} setEmbedCode={refreshEmbedCode} />
+        <SpotifyEmbed embedCode={voteState.embedCode} setEmbedCode={setEmbedCode} />
       )}
     </main>
   )
