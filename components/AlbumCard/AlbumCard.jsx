@@ -33,7 +33,7 @@ AlbumCard.propTypes = {
   songs: PropTypes.array.isRequired,
   votes: PropTypes.array,
   voteDispatch: PropTypes.func.isRequired,
-  setEmbedCode: PropTypes.func
+  setEmbedCode: PropTypes.func.isRequired
 }
 
 export default React.memo(AlbumCard)

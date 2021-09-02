@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import PropTypes from 'prop-types'
 
 import styles from './SpotifyEmbed.module.scss'
 
-export default function SpotifyEmbed ({ embedCode, setEmbedCode }) {
+function SpotifyEmbed ({ embedCode, setEmbedCode }) {
   const [opacity, setOpacity] = useState(0)
 
-  function onClose () {
+  const onClose = useCallback(function onClose () {
     setEmbedCode('')
-  }
+  }, [setEmbedCode])
 
-  function oniFrameLoad () {
+  const oniFrameLoad = useCallback(function oniFrameLoad () {
     setOpacity(0.9)
-  }
+  }, [])
 
   return (
     <div className={styles.SpotifyEmbed} style={{ opacity }}>
@@ -34,3 +34,5 @@ SpotifyEmbed.propTypes = {
   embedCode: PropTypes.string.isRequired,
   setEmbedCode: PropTypes.func.isRequired
 }
+
+export default SpotifyEmbed

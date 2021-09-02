@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
@@ -7,17 +7,17 @@ import * as VOTE_ACTIONS from '../../constants/voteActions'
 import styles from './Song.module.scss'
 
 function Song ({ idSong, albumPosition, name, embedCode, isSelected, voteDispatch, setEmbedCode, albumSlug }) {
-  function onSongPlay () {
+  const onSongPlay = useCallback(function onSongPlay () {
     setEmbedCode(embedCode)
-  }
+  }, [embedCode, setEmbedCode])
 
-  function onToggleVote () {
+  const onToggleVote = useCallback(function onToggleVote () {
     if (isSelected) {
       voteDispatch({ type: VOTE_ACTIONS.REMOVE_VOTE, payload: { idSong, albumSlug } })
     } else {
       voteDispatch({ type: VOTE_ACTIONS.ADD_VOTE, payload: { idSong, albumSlug } })
     }
-  }
+  }, [albumSlug, idSong, isSelected, voteDispatch])
 
   let songClass = styles.Song
   if (isSelected) {
@@ -42,7 +42,7 @@ Song.propTypes = {
   embedCode: PropTypes.string.isRequired,
   isSelected: PropTypes.bool.isRequired,
   voteDispatch: PropTypes.func.isRequired,
-  setEmbedCode: PropTypes.func,
+  setEmbedCode: PropTypes.func.isRequired,
   albumSlug: PropTypes.string.isRequired
 }
 export default React.memo(Song)

@@ -40,5 +40,5 @@ SongsList.propTypes = {
   slug: PropTypes.string.isRequired,
   votes: PropTypes.array,
   voteDispatch: PropTypes.func.isRequired,
-  setEmbedCode: PropTypes.func
+  setEmbedCode: PropTypes.func.isRequired
 }

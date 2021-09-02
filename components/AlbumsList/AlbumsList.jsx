@@ -27,6 +27,6 @@ export default function AlbumsList ({ albums, albumVotes, setEmbedCode, voteDisp
 AlbumsList.propTypes = {
   albums: PropTypes.object.isRequired,
   albumVotes: PropTypes.object.isRequired,
-  setEmbedCode: PropTypes.func,
+  setEmbedCode: PropTypes.func.isRequired,
   voteDispatch: PropTypes.func.isRequired
 }
