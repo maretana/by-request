@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import '../../styles/base';
 
 .AlbumCardListItem {
@@ -24,10 +26,10 @@
 }
 
 .AlbumTitle {
-  font-size: (22px / $minFontSize) * 1rem;
+  font-size: math.div(22px, $minFontSize) * 1rem;
 }
 
 .AlbumYear {
-  font-size: (18px / $minFontSize) * 1rem;
+  font-size: math.div(18px, $minFontSize) * 1rem;
   margin-top: 0.5em;
 }

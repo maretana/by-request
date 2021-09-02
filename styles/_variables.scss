@@ -1,2 +1,4 @@
+@use "sass:math";
+
 $minFontSize: 16px;
-$headerHeight: (55px / $minFontSize) * 1rem;
+$headerHeight: math.div(55px, $minFontSize) * 1rem;
